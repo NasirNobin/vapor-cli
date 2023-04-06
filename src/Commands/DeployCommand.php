@@ -323,6 +323,6 @@ class DeployCommand extends Command
                 ->where('name', 'laravel/vapor-core')
                 ->first()->version;
 
-        return ltrim($version, 'v');
+        return ltrim($version ?: '', 'v');
     }
 }
